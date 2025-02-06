@@ -1,12 +1,11 @@
-# Node.js (Angular)
-frontend/node_modules/
-frontend/dist/
+# Ignorar dependencias de Angular
+angular19/node_modules/
+angular19/dist/
 
-# Java (Spring Boot)
-backend/target/
-backend/.mvn/
-backend/.idea/
+# Ignorar archivos de compilación de Spring Boot
+spring-boot-jdbctemplate/target/
+spring-boot-jdbctemplate/.mvn/
+spring-boot-jdbctemplate/.idea/
 
-# Archivos del sistema
+# Ignorar archivos del sistema
 .DS_Store
-
