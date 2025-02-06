@@ -1,0 +1,18 @@
+<h2>Editar Tutorial</h2>
+
+<form [formGroup]="tutorialForm">
+    <div>
+        <label for="title" class="form-label">Título:</label>
+        <input type="text" class="form-control" id="title" formControlName="title">
+    </div>
+    <div class="mb-3">
+        <label for="description" class="form-label">Descripción:</label>
+        <textarea class="form-control" id="description" formControlName="description"></textarea>
+    </div>
+    <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="published" formControlName="published">
+        <label class="form-check-label" for="published">Publicado</label>
+    </div>
+
+    <button type="button" class="btn btn-success" (click)="updateTutorial()">Actualizar</button>
+</form>

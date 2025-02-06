@@ -1,0 +1,37 @@
+<h2>Tutorials List</h2>
+
+<!-- Buscador de tutoriales -->
+<input 
+  type="text" 
+  class="form-control" 
+  placeholder="Search by title"
+  [(ngModel)]="searchTerm" 
+  (input)="filterTutorials()">
+
+<!-- Lista de tutoriales con verificación de existencia -->
+<ul class="list-group mt-3" *ngIf="tutorials && tutorials.length > 0; else noTutorials">
+  <li 
+    *ngFor="let tutorial of tutorials" 
+    class="list-group-item"
+    [class.active]="tutorial === selectedTutorial"
+    (click)="selectTutorial(tutorial)">
+    {{ tutorial.title }}
+  </li>
+</ul>
+
+<!-- Mensaje si no hay tutoriales -->
+<ng-template #noTutorials>
+  <p class="text-muted">No tutorials available.</p>
+</ng-template>
+
+<!-- Mostrar detalles del tutorial seleccionado -->
+<div *ngIf="selectedTutorial" class="mt-3">
+  <h3>Tutorial</h3>
+  <p><strong>Title:</strong> {{ selectedTutorial.title }}</p>
+  <p><strong>Description:</strong> {{ selectedTutorial.description }}</p>
+  <p><strong>Status:</strong> {{ selectedTutorial.published ? 'Published' : 'Not Published' }}</p>
+
+  <button class="btn btn-warning" [routerLink]="['/tutorials', selectedTutorial?.id]" [disabled]="!selectedTutorial">
+    Edit
+  </button>
+</div>

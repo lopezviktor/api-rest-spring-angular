@@ -1,0 +1,12 @@
+# Node.js (Angular)
+frontend/node_modules/
+frontend/dist/
+
+# Java (Spring Boot)
+backend/target/
+backend/.mvn/
+backend/.idea/
+
+# Archivos del sistema
+.DS_Store
+
